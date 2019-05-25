@@ -1,0 +1,150 @@
+TestNG - Test Next Generation
+devloped by cedric beaust
+it's advanced to JUnit
+Using TestNg we can do unit testing, integration and system testing
+In TestNg every test case is one Java method which is annotated with @Test
+eg : 
+import org.testng.annotations.Test
+@Test
+public vodi loginTest(){
+	statements;
+	stetements;
+}
+
+Features of TestNg over Junit
+1. TestNG have several inbuilt annotations to execute preconditions and
+post conditions of every test case like @BeforeMethod, @AfterMethod, @BeforeClass
+, @AfterClass ..etc
+
+2. It has inbuilt reporting that means it will generate a report of test cases 
+pass or fail status as an HTML file
+
+3. TestNG have the capabililty to execute multiple test cases as a Suite file.
+these suite files are xml files
+
+4. Priortization of test cases is possible
+
+5. include and excude test cases from the execution using suite file
+
+6. Parameterization from xml files is possible
+
+7. Inbuilt data driven testing using @DataProvider annotation (from excel files)
+
+8. Grouping of test cases is also possible
+
+9. we can create dependent test cases (i.e a test case depends on another test case
+status)
+
+10. supports differnt listeners like ISuiteListener, ITestListener ..etc
+
+
+
+TestNG Suite file testng.xml or suite.xml
+<!DOCTYPE declaration>
+<suite name = "my suite">
+  <test name = "first test">
+     <classes>
+	<class name = "packagename.classname">
+	  <methods>
+	    <include name = "name of the method you want to execute"/>
+	    <exclude name = "name of the method you want to skip from the execution/> 
+	  </methods>		
+	</class>
+     </classes>
+  </test>
+</suite>
+
+testng.xml or suite.xml contains only one <suite> tag
+inside <suite> tag we can have any number of <test> tags
+inside <test> tag we can have any number of <class> tags and these 
+are the classes which contains test cases i.e methods with @Test annotations
+inside the <class> tag <methods> tag is optional
+if we didn't add <methods> tag then suite file will execute all @test annotated 
+method of the class in <class> tag. If we want to execute only specific methods
+of in that class then we can add <methods> tag with <include> tag. 
+<include> tag contains method you want to execute
+
+
+
+
+TestNg Annotations
+1. @Test: it represents a single test case as Java method
+2. @BeforeMethod: It is Java method which will execute before every @Test annotated
+method
+3. @AfterMethod: It is a Java method which will execute after every @Test annotated
+method
+4. @BeforeClass: It is a Java method which will execute before executing first 
+@Test annotated method of the class
+5. @AfterClass: It is a Java method whic will execute after executing last @Test
+annoteted method of the class
+6. @BeforeTest: It is a Java method which will execute before executing first @Test
+annotated method of the first class in <test> tag (simply before <test> tag)
+7. @AfterTest: It is a Java method which will execute after executing last @Test
+annotated method of the last class in <test> tag (simply after <test> tag)
+8. @BeforeSuite: It is a Java method which will execute before executing first 
+@Test annotated method in first class of first <test> tag in <suite> tag
+9. @AfterSuite: It is a Jva method which will execute after executing last @Test
+annotated method in last class of last <test> in <suite> tag
+10. @Parameters: It is applied to a Java method. It is used to get some 
+parameters from suite file to your class file.
+	we have two types of parameters i.e suite level parameters and test level
+	suite level parameters we are going to write inside suite tag and test level
+	parameters we are going write inside test tag of suite.xml file using 
+	<parameter> tag
+	eg:
+	<paramter name="name of parameter" value="value of paramter"/>
+11. @DataProvider: It is applied to any Java method with @Test annotation. It is
+used to conduct data driven test by taking test data from any excel file or any
+java class also.
+12. @Literners: It is applied to a Java class. It is used to apply TestNg listners
+like ISuiteListener, ITestListener to the class which contains Test cases
+
+Attributes of annotations
+@Test attributes
+1. priority: it accepts an integer value. default value is 0.
+It is used to proritize the test cases, 0 means highest priority. if we increase
+number prioriry will decrease i.e. higher the number lower the prioriry.
+if we didn't mention any prioriry to @Test annotated methods then every test case
+will have highest priority i.e. 0 then the test cases will execute in alphabatical order
+
+2. enabled: it accepts a boolean value either true or false
+If it is set to false then that @Test annotated method will not execute
+
+3. dependsOnMethods: It accepts an array of String values. 
+It is used to make a test case dependent on other test cases. The String values are
+names of the methods on which this test case depends.
+
+4. groups: It accepts an array of String values, these String values are names of 
+the groups. It is used to group our test cases. To execute the test cases in groups
+we have to add the following in out suite.xml file
+	<test name = "my test">
+	  <groups>
+	    <run>
+	      <include name="name of the group"/>
+	      <exclude name ="name of the group/> 		
+	    </run>
+	   <groups>
+	   <classes>.....</classes>
+	</test>
+Note: groups attribute we can use for @Before.. and @After.. annotations also
+
+5. dataProvider: It is used to provide name of the @DataProvider annotation 
+we created to get the data from any excel file
+
+6. runAlways: it accepts a boolean value. If it is set to true this test case 
+will execute every time we execute the class
+eg:
+@Test(priority = 3, enabled = true, dependsOnMethods={"methodName"}, 
+	groups = {"valid", "branch", "datadriven"}, dataProvider="name of the dataprovider",
+	runAlways = true)
+public void branchCreationReset(){ .... }
+
+
+
+
+
+
+
+
+
+
