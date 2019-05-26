@@ -42,4 +42,6 @@ public class BankHomePage {
 	public void clickLogin() {
 		this.loginButton().click();
 	}
+	
+	
 }

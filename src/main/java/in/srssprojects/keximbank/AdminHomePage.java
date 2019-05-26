@@ -65,5 +65,9 @@ public class AdminHomePage {
 		this.employees.click();
 		return PageFactory.initElements(driver, EmployeeDetailsPage.class);
 	}
+	
+	public boolean isAdminHomePageDispalyed() {
+		return this.logout.isDisplayed() && driver.getCurrentUrl().contains("adminflow");
+	}
 
 }

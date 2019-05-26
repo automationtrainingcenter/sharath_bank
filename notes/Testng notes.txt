@@ -1,5 +1,5 @@
 TestNG - Test Next Generation
-devloped by cedric beaust
+devloped by cedric beust
 it's advanced to JUnit
 Using TestNg we can do unit testing, integration and system testing
 In TestNg every test case is one Java method which is annotated with @Test
