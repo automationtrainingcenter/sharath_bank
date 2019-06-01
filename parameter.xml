@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="basic suite">
+	<parameter name="url" value="http://srssprojects.in"/>
+	<test name="basic test">
+		<parameter name="browser" value = "firefox"/>
+		<groups>
+			<run>
+				<include name="reset"/>
+			</run>
+		</groups>
+		<classes>
+			<class name="in.srssprojects.keximbank.ParameterExecution">
+			</class>
+		</classes>
+	</test>
+</suite>  

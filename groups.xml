@@ -2,13 +2,14 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="basic suite">
 	<test name="basic test">
+		<groups>
+			<run>
+				<include name="valid"/>
+				<include name="reset"/>
+			</run>
+		</groups>
 		<classes>
 			<class name="in.srssprojects.keximbank.BasicExecution">
-				<methods>
-					<include name="loginTest" />
-					<include name="roleCreatoinReset" />
-					<include name="roleCreationCancel" />
-				</methods>
 			</class>
 		</classes>
 	</test>

@@ -6,7 +6,7 @@ In TestNg every test case is one Java method which is annotated with @Test
 eg : 
 import org.testng.annotations.Test
 @Test
-public vodi loginTest(){
+public void loginTest(){
 	statements;
 	stetements;
 }
@@ -86,7 +86,9 @@ annotated method of the last class in <test> tag (simply after <test> tag)
 9. @AfterSuite: It is a Jva method which will execute after executing last @Test
 annotated method in last class of last <test> in <suite> tag
 10. @Parameters: It is applied to a Java method. It is used to get some 
-parameters from suite file to your class file.
+parameters from suite file to your class file. This annotation accepts an array of 
+String arguments.
+eg: @Parameters({"parameter1 name","parameter2 name", ..etc})
 	we have two types of parameters i.e suite level parameters and test level
 	suite level parameters we are going to write inside suite tag and test level
 	parameters we are going write inside test tag of suite.xml file using 
