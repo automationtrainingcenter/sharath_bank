@@ -11,7 +11,7 @@ public class GenericHelper {
 	 * this method returns absolute path of the file you specified in the folder name we specified
 	 * in project root folder
 	 */
-	public String getFilePath(String folderName, String fileName) {
+	public static String getFilePath(String folderName, String fileName) {
 		return System.getProperty("user.dir")+File.separator+folderName+File.separator+fileName;
 	}
 

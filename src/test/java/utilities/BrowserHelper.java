@@ -1,10 +1,17 @@
 package utilities;
 
 import java.io.File;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.BrowserType;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class BrowserHelper extends GenericHelper{
 	public WebDriver driver;
@@ -31,6 +38,32 @@ public class BrowserHelper extends GenericHelper{
 		driver.manage().window().maximize();
 	}
 	
+	
+	public void launchBrowser(String brName, String url, String nodeUrl, String os) {
+		DesiredCapabilities caps = new DesiredCapabilities();
+		if(os.equalsIgnoreCase("windows")) {
+			caps.setPlatform(Platform.WINDOWS);
+		}else if(os.equalsIgnoreCase("mac")) {
+			caps.setPlatform(Platform.MAC);
+		}else if(os.equalsIgnoreCase("linux")) {
+			caps.setPlatform(Platform.LINUX);
+		}
+		
+		if(brName.equalsIgnoreCase("chrome")) {
+			caps = DesiredCapabilities.chrome();
+		}else if(brName.equalsIgnoreCase("firefox")) {
+			caps = DesiredCapabilities.firefox();
+		}
+		
+		try {
+			driver = new RemoteWebDriver(new URL(nodeUrl), caps);
+			driver.get(url);
+			driver.manage().window().maximize();
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		} catch (MalformedURLException e) {
+			System.out.println(e.getMessage());
+		}
+	}
 	
 	public String getCurrentUrl() {
 		if(driver != null) {

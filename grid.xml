@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="grid suite" parallel="tests" thread-count="2">
+	<parameter name="url" value="http://srssprojects.in"/>
+	<test name="node1 test">
+		<parameter name="browser" value = "chrome"/>
+		<parameter name="nodeURL" value="http://192.168.1.23:31364/wd/hub"/>
+		<parameter name="os" value= "windows"/>
+ 		<groups>
+			<run>
+				<include name="reset"/>
+			</run>
+		</groups>
+		<classes>
+			<class name="in.srssprojects.keximbank.GridExecution">
+			</class>
+		</classes>
+	</test>
+</suite>  

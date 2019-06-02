@@ -3,10 +3,12 @@ package in.srssprojects.keximbank;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 
-public class BasicExecution extends TestExecution{
+
+public class GridExecution extends TestExecution{
 	@BeforeClass(groups = {"datadriven", "role", "employee", "valid", "reset", "cancel", "duplicate", "blank" })
-	public void launchBrowser() {
-		launchBrowser(readProperty("browser"), readProperty("url"));
+	@Parameters({ "browser", "url", "nodeURL", "os" })
+	public void browserLaunch(String brName, String u, String nodeUrl, String os) {
+		launchBrowser(brName, u, nodeUrl, os);
 		if (getCurrentUrl().contains("srssprojects")) {
 			bankHomePage = new BankHomePage(driver);
 		}

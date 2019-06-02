@@ -14,10 +14,12 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import utilities.BrowserHelper;
+import utilities.ExcelHelper;
 
 public class TestExecution extends BrowserHelper {
 	BankHomePage bankHomePage;
@@ -28,7 +30,7 @@ public class TestExecution extends BrowserHelper {
 	private EmployeeDetailsPage employeeDetailsPage;
 	private EmployeeCreaionPage employeeCreationPage;
 
-	@Test(priority = 1, groups = { "role", "employee", "valid", "reset", "cancel", "duplicate", "blank" })
+	@Test(priority = 1, groups = {"datadriven", "role", "employee", "valid", "reset", "cancel", "duplicate", "blank" })
 	public void loginTest() {
 		bankHomePage.setUserName(readProperty("username"));
 		bankHomePage.setPassword(readProperty("password"));
@@ -162,7 +164,42 @@ public class TestExecution extends BrowserHelper {
 		Assert.assertTrue(employeeDetailsPage.isNewEmployeeDisplayed());
 	}
 
-	@AfterClass(groups = { "role", "employee", "valid", "reset", "cancel", "duplicate", "blank" })
+	@Test(priority = 17, groups = { "role", "datadriven" })
+	public void roleCreationResetWithMultipleDataWithoutDP() {
+		roleDetailsPage = adminHomePage.clickRoles();
+		roleCreationPage = roleDetailsPage.clickNewRole();
+		ExcelHelper excel = new ExcelHelper();
+		excel.openExcel("", "testdata.xls", "roleData");
+		int nor = excel.rowCount();
+		for (int i = 1; i <= nor; i++) {
+			String roleName = excel.readData(i, 0);
+			String roleType = excel.readData(i, 2);
+			roleCreationPage.setRoleName(roleName);
+			roleCreationPage.selectRoleType(roleType);
+			roleCreationPage.clickReset();
+			Assert.assertTrue(roleCreationPage.isFormReset());
+		}
+	}
+	
+	@DataProvider(name = "empData")
+	public Object[][] getEmpData() {
+		ExcelHelper excel = new ExcelHelper();
+		return excel.readSheetData("", "testdata.xls", "employeeData");
+	}
+	
+	@Test(priority = 18, groups= {"employee", "datadriven"}, dataProvider = "empData")
+	public void employeeCreationResetWithDP(String empName, String password, String roleName, String branchName) {
+		employeeDetailsPage = adminHomePage.clickEmployees();
+		employeeCreationPage = employeeDetailsPage.clickNewEmployee();
+		employeeCreationPage.setEmployeeName(empName);
+		employeeCreationPage.setPasswd(password);
+		employeeCreationPage.setRole(roleName);
+		employeeCreationPage.setBranch(branchName);
+		employeeCreationPage.clickReset();
+		Assert.assertTrue(employeeCreationPage.isEmployeeReset());
+	}
+
+	@AfterClass(groups = { "datadriven","role", "employee", "valid", "reset", "cancel", "duplicate", "blank" })
 	public void browserClose() {
 		closeBrowser();
 	}
