@@ -4,7 +4,7 @@
 	<test name="basic test">
 		<groups>
 			<run>
-				<include name="valid"/>
+				<include name="cancel"/>
 				<include name="reset"/>
 			</run>
 		</groups>

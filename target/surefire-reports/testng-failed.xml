@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [basic suite]">
+  <test thread-count="5" verbose="0" name="basic test(failed)">
+    <groups>
+      <run>
+        <include name="valid"/>
+        <include name="reset"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="in.srssprojects.keximbank.BasicExecution">
+        <methods>
+          <include name="employeeCreationWithValidData"/>
+          <include name="roleCreationWithValidData"/>
+          <include name="browserClose"/>
+          <include name="launchBrowser"/>
+        </methods>
+      </class> <!-- in.srssprojects.keximbank.BasicExecution -->
+    </classes>
+  </test> <!-- basic test(failed) -->
+</suite> <!-- Failed suite [basic suite] -->

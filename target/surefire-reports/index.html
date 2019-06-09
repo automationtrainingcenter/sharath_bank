@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <meta charset='utf-8'>
+  <title>TestNG reports</title>
+
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" />
+    <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>
+    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <br/>
+      <span class="top-banner-font-1">1 suite</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" class="collapse-all-link" title="Collapse/expand all the suites">
+          <img class="collapse-all-icon" src="collapseall.gif">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" class="navigator-link" panel-name="suite-parallel_suite">
+              <span class="suite-name border-passed">parallel suite</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="test-xml-parallel_suite">
+                    <span>D:\SSTS\sharath_weekend\keximbank\parallel.xml</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="testlist-parallel_suite">
+                    <span class="test-stats">2 tests</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="group-parallel_suite">
+                    <span>8 groups</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="times-parallel_suite">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="reporter-parallel_suite">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="ignored-methods-parallel_suite">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="chronological-parallel_suite">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">6 methods,   6 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-parallel_suite" class="hide-methods passed suite-parallel_suite"> (hide)</a> <!-- hide-methods passed suite-parallel_suite -->
+                      <a href="#" panel-name="suite-parallel_suite" class="show-methods passed suite-parallel_suite"> (show)</a> <!-- show-methods passed suite-parallel_suite -->
+                    </span>
+                    <div class="method-list-content passed suite-parallel_suite">
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-parallel_suite" title="in.srssprojects.keximbank.ParameterExecution" hash-for-method="employeeCreationCancel">employeeCreationCancel</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-parallel_suite" title="in.srssprojects.keximbank.ParameterExecution" hash-for-method="employeeCreationReset">employeeCreationReset</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-parallel_suite" title="in.srssprojects.keximbank.ParameterExecution" hash-for-method="loginTest">loginTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-parallel_suite" title="in.srssprojects.keximbank.ParameterExecution" hash-for-method="loginTest">loginTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-parallel_suite" title="in.srssprojects.keximbank.ParameterExecution" hash-for-method="roleCreationCancel">roleCreationCancel</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-parallel_suite" title="in.srssprojects.keximbank.ParameterExecution" hash-for-method="roleCreatoinReset">roleCreatoinReset</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-parallel_suite -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-parallel_suite" class="panel parallel_suite">
+          <div class="suite-parallel_suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">in.srssprojects.keximbank.ParameterExecution</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="employeeCreationCancel">
+                  </a> <!-- employeeCreationCancel -->
+                  <span class="method-name">employeeCreationCancel</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="employeeCreationReset">
+                  </a> <!-- employeeCreationReset -->
+                  <span class="method-name">employeeCreationReset</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="loginTest">
+                  </a> <!-- loginTest -->
+                  <span class="method-name">loginTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="loginTest">
+                  </a> <!-- loginTest -->
+                  <span class="method-name">loginTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="roleCreationCancel">
+                  </a> <!-- roleCreationCancel -->
+                  <span class="method-name">roleCreationCancel</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="roleCreatoinReset">
+                  </a> <!-- roleCreatoinReset -->
+                  <span class="method-name">roleCreatoinReset</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-parallel_suite-class-passed -->
+        </div> <!-- panel parallel_suite -->
+        <div panel-name="test-xml-parallel_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">D:\SSTS\sharath_weekend\keximbank\parallel.xml</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite thread-count=&quot;2&quot; guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot; name=&quot;parallel suite&quot; parallel=&quot;tests&quot;&gt;
+  &lt;parameter name=&quot;url&quot; value=&quot;http://srssprojects.in&quot;/&gt;
+  &lt;test thread-count=&quot;2&quot; verbose=&quot;0&quot; name=&quot;chrome test&quot; parallel=&quot;tests&quot;&gt;
+    &lt;parameter name=&quot;browser&quot; value=&quot;chrome&quot;/&gt;
+    &lt;groups&gt;
+      &lt;run&gt;
+        &lt;include name=&quot;reset&quot;/&gt;
+      &lt;/run&gt;
+    &lt;/groups&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;in.srssprojects.keximbank.ParameterExecution&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- chrome test --&gt;
+  &lt;test thread-count=&quot;2&quot; verbose=&quot;0&quot; name=&quot;firefox test&quot; parallel=&quot;tests&quot;&gt;
+    &lt;parameter name=&quot;browser&quot; value=&quot;firefox&quot;/&gt;
+    &lt;groups&gt;
+      &lt;run&gt;
+        &lt;include name=&quot;cancel&quot;/&gt;
+      &lt;/run&gt;
+    &lt;/groups&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;in.srssprojects.keximbank.ParameterExecution&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- firefox test --&gt;
+&lt;/suite&gt; &lt;!-- parallel suite --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-parallel_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for parallel suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">chrome test (1 class)</span>
+              </li>
+              <li>
+                <span class="test-name">firefox test (1 class)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-parallel_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for parallel suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="test-group">
+              <span class="test-group-name">blank</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">loginTest</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+            <div class="test-group">
+              <span class="test-group-name">cancel</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">employeeCreationCancel</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">loginTest</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">roleCreationCancel</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+            <div class="test-group">
+              <span class="test-group-name">datadriven</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">loginTest</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+            <div class="test-group">
+              <span class="test-group-name">duplicate</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">loginTest</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+            <div class="test-group">
+              <span class="test-group-name">employee</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">employeeCreationCancel</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">employeeCreationReset</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">loginTest</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+            <div class="test-group">
+              <span class="test-group-name">reset</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">employeeCreationReset</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">loginTest</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">roleCreatoinReset</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+            <div class="test-group">
+              <span class="test-group-name">role</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">loginTest</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">roleCreationCancel</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">roleCreatoinReset</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+            <div class="test-group">
+              <span class="test-group-name">valid</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">loginTest</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-parallel_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for parallel suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_parallel_suite');
+function tableData_parallel_suite() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(6);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'employeeCreationReset')
+data.setCell(0, 2, 'in.srssprojects.keximbank.ParameterExecution')
+data.setCell(0, 3, 8830);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'loginTest')
+data.setCell(1, 2, 'in.srssprojects.keximbank.ParameterExecution')
+data.setCell(1, 3, 3874);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'employeeCreationCancel')
+data.setCell(2, 2, 'in.srssprojects.keximbank.ParameterExecution')
+data.setCell(2, 3, 3806);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'roleCreatoinReset')
+data.setCell(3, 2, 'in.srssprojects.keximbank.ParameterExecution')
+data.setCell(3, 3, 2791);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'roleCreationCancel')
+data.setCell(4, 2, 'in.srssprojects.keximbank.ParameterExecution')
+data.setCell(4, 3, 2539);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'loginTest')
+data.setCell(5, 2, 'in.srssprojects.keximbank.ParameterExecution')
+data.setCell(5, 3, 2391);
+window.suiteTableData['parallel_suite']= { tableData: data, tableDiv: 'times-div-parallel_suite'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 24 seconds</span>
+              <div id="times-div-parallel_suite">
+              </div> <!-- times-div-parallel_suite -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-parallel_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for parallel suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-parallel_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">20 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">in.srssprojects.keximbank.ParameterExecution</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">employeeCreationWithBlankData</span>
+                <br/>
+                <span class="ignored-method-name">employeeCreationWithBlankData</span>
+                <br/>
+                <span class="ignored-method-name">roleCreationResetWithMultipleDataWithoutDP</span>
+                <br/>
+                <span class="ignored-method-name">roleCreationResetWithMultipleDataWithoutDP</span>
+                <br/>
+                <span class="ignored-method-name">employeeCreationResetWithDP</span>
+                <br/>
+                <span class="ignored-method-name">employeeCreationResetWithDP</span>
+                <br/>
+                <span class="ignored-method-name">employeeCreationWithDuplicateData</span>
+                <br/>
+                <span class="ignored-method-name">employeeCreationWithDuplicateData</span>
+                <br/>
+                <span class="ignored-method-name">employeeCreationReset</span>
+                <br/>
+                <span class="ignored-method-name">employeeCreationWithValidData</span>
+                <br/>
+                <span class="ignored-method-name">employeeCreationWithValidData</span>
+                <br/>
+                <span class="ignored-method-name">roleCreationCancel</span>
+                <br/>
+                <span class="ignored-method-name">roleCreationWithBlankData</span>
+                <br/>
+                <span class="ignored-method-name">roleCreationWithBlankData</span>
+                <br/>
+                <span class="ignored-method-name">roleCreatoinReset</span>
+                <br/>
+                <span class="ignored-method-name">roleCreationWithValidData</span>
+                <br/>
+                <span class="ignored-method-name">roleCreationWithValidData</span>
+                <br/>
+                <span class="ignored-method-name">roleCreationWithDuplicateData</span>
+                <br/>
+                <span class="ignored-method-name">employeeCreationCancel</span>
+                <br/>
+                <span class="ignored-method-name">roleCreationWithDuplicateData</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-parallel_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">in.srssprojects.keximbank.ParameterExecution</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">browserLaunch(firefox, http://srssprojects.in)</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="configuration-class before">
+                <span class="method-name">browserLaunch(chrome, http://srssprojects.in)</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">loginTest</span>
+                <span class="method-start">14296 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">loginTest</span>
+                <span class="method-start">16773 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">roleCreatoinReset</span>
+                <span class="method-start">18173 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">roleCreationCancel</span>
+                <span class="method-start">19165 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">employeeCreationReset</span>
+                <span class="method-start">20965 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">employeeCreationCancel</span>
+                <span class="method-start">21705 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-class after">
+                <span class="method-name">browserClose</span>
+                <span class="method-start">25511 ms</span>
+              </div> <!-- configuration-class after -->
+              <div class="configuration-class after">
+                <span class="method-name">browserClose</span>
+                <span class="method-start">29795 ms</span>
+              </div> <!-- configuration-class after -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+</html>
