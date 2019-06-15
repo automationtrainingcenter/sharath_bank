@@ -5,7 +5,13 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.Properties;
 
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.ExtentTest;
+
 public class GenericHelper {
+	
+	static ExtentReports report;
+	static ExtentTest test;
 	
 	/*
 	 * this method returns absolute path of the file you specified in the folder name we specified

@@ -6,7 +6,7 @@
 			<class name="in.srssprojects.keximbank.BasicExecution">
 				<methods>
 					<include name="loginTest" />
-					<include name="roleCreatoinReset" />
+					<include name="branchUpdationWithValidData" />
 					<include name="roleCreationCancel" />
 				</methods>
 			</class>

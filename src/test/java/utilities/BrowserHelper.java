@@ -12,49 +12,59 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.BrowserType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
 
-public class BrowserHelper extends GenericHelper{
+public class BrowserHelper extends GenericHelper {
 	public WebDriver driver;
-	
+
+	public WebDriver getDriver() {
+		return this.driver;
+	}
+
 	public void launchBrowser(String browserName, String url) {
 		browserName = browserName.toLowerCase();
 		String os = System.getProperty("os.name").toLowerCase();
-		if(browserName.equals("chrome")  && os.contains("windows")) {
+		if (browserName.equals("chrome") && os.contains("windows")) {
 			System.setProperty("webdriver.chrome.driver", getFilePath("drivers", "chromedriver.exe"));
 			driver = new ChromeDriver();
-		}else if(browserName.equals("firefox") && os.contains("windows")) {
+		} else if (browserName.equals("firefox") && os.contains("windows")) {
 			System.setProperty("webdriver.gecko.driver", getFilePath("drivers", "geckodriver.exe"));
 			driver = new FirefoxDriver();
-		}else if(browserName.equals("chrome")) {
+		} else if (browserName.equals("chrome")) {
 			System.setProperty("webdriver.chrome.driver", getFilePath("drivers", "chromedriver"));
 			driver = new ChromeDriver();
-		}else if(browserName.equals("firefox")) {
+		} else if (browserName.equals("firefox")) {
 			System.setProperty("webdriver.gecko.driver", getFilePath("drivers", "geckodriver"));
 			driver = new FirefoxDriver();
-		}else{
+		} else {
 			throw new RuntimeException("invalid browser name");
 		}
+		//create an object of Listener class
+		Listener listener = new Listener();
+		//create EventFiringWebDriver class
+		EventFiringWebDriver edriver = new EventFiringWebDriver(driver);
+		edriver.register(listener);
+		driver = edriver;
 		driver.get(url);
 		driver.manage().window().maximize();
 	}
-	
-	
+
 	public void launchBrowser(String brName, String url, String nodeUrl, String os) {
 		DesiredCapabilities caps = new DesiredCapabilities();
-		if(os.equalsIgnoreCase("windows")) {
+		if (os.equalsIgnoreCase("windows")) {
 			caps.setPlatform(Platform.WINDOWS);
-		}else if(os.equalsIgnoreCase("mac")) {
+		} else if (os.equalsIgnoreCase("mac")) {
 			caps.setPlatform(Platform.MAC);
-		}else if(os.equalsIgnoreCase("linux")) {
+		} else if (os.equalsIgnoreCase("linux")) {
 			caps.setPlatform(Platform.LINUX);
 		}
-		
-		if(brName.equalsIgnoreCase("chrome")) {
+
+		if (brName.equalsIgnoreCase("chrome")) {
 			caps = DesiredCapabilities.chrome();
-		}else if(brName.equalsIgnoreCase("firefox")) {
+		} else if (brName.equalsIgnoreCase("firefox")) {
 			caps = DesiredCapabilities.firefox();
 		}
-		
+
 		try {
 			driver = new RemoteWebDriver(new URL(nodeUrl), caps);
 			driver.get(url);
@@ -64,15 +74,15 @@ public class BrowserHelper extends GenericHelper{
 			System.out.println(e.getMessage());
 		}
 	}
-	
+
 	public String getCurrentUrl() {
-		if(driver != null) {
+		if (driver != null) {
 			return driver.getCurrentUrl();
-		}else {
+		} else {
 			return "";
 		}
 	}
-		
+
 	public void sleep(long timeInMillis) {
 		try {
 			Thread.sleep(timeInMillis);
@@ -81,17 +91,13 @@ public class BrowserHelper extends GenericHelper{
 			e.printStackTrace();
 		}
 	}
-	
-	
+
 	public void closeBrowser() {
-		if(driver.getWindowHandles().size() > 1) {
+		if (driver.getWindowHandles().size() > 1) {
 			driver.quit();
-		}else {
+		} else {
 			driver.close();
 		}
 	}
-	
-	
-	
 
 }

@@ -15,12 +15,15 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import utilities.BrowserHelper;
 import utilities.ExcelHelper;
+import utilities.TestListener;
 
+@Listeners(TestListener.class)
 public class TestExecution extends BrowserHelper {
 	BankHomePage bankHomePage;
 	AdminHomePage adminHomePage;
@@ -29,6 +32,8 @@ public class TestExecution extends BrowserHelper {
 	private Alert alert;
 	private EmployeeDetailsPage employeeDetailsPage;
 	private EmployeeCreaionPage employeeCreationPage;
+	private BranchDetailsPage branchDetailsPage;
+	private BranchUpdationPage branchUpdationPage;
 
 	@Test(priority = 1, groups = {"datadriven", "role", "employee", "valid", "reset", "cancel", "duplicate", "blank" })
 	public void loginTest() {
@@ -197,6 +202,18 @@ public class TestExecution extends BrowserHelper {
 		employeeCreationPage.setBranch(branchName);
 		employeeCreationPage.clickReset();
 		Assert.assertTrue(employeeCreationPage.isEmployeeReset());
+	}
+	
+	
+	@Test(priority = 19, groups = {"branch"})
+	public void branchUpdationWithValidData() {
+		branchDetailsPage=adminHomePage.clickBranches();
+		branchUpdationPage = branchDetailsPage.clickEdit("236");
+		branchUpdationPage.setAddress1("newAddress");
+		Alert alert = branchUpdationPage.clickUpdate();
+		String alertText = alert.getText();
+		alert.accept();
+		Assert.assertTrue(alertText.contains("updated Sucessfully"));
 	}
 
 	@AfterClass(groups = { "datadriven","role", "employee", "valid", "reset", "cancel", "duplicate", "blank" })

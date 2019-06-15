@@ -4,7 +4,21 @@
 	<parameter name="url" value="http://srssprojects.in"/>
 	<test name="node1 test">
 		<parameter name="browser" value = "chrome"/>
-		<parameter name="nodeURL" value="http://192.168.1.23:31364/wd/hub"/>
+		<parameter name="nodeURL" value="http://192.168.1.23:24644/wd/hub"/>
+		<parameter name="os" value= "windows"/>
+ 		<groups>
+			<run>
+				<include name="datadriven"/>
+			</run>
+		</groups>
+		<classes>
+			<class name="in.srssprojects.keximbank.GridExecution">
+			</class>
+		</classes>
+	</test>
+	<test name="node2 test">
+		<parameter name="browser" value = "firefox"/>
+		<parameter name="nodeURL" value="http://192.168.1.3:45513/wd/hub"/>
 		<parameter name="os" value= "windows"/>
  		<groups>
 			<run>
